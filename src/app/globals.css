@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-poppins: 'Poppins', sans-serif;
+    --font-volkhov: 'Volkhov', serif;
+  }
+
+  body {
+    font-family: var(--font-poppins);
+    @apply bg-white text-dark-body dark:bg-dark-surface dark:text-gray-200 transition-colors duration-200;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-volkhov);
+    @apply text-dark dark:text-white;
+  }
+}
+
+/* Custom Utilities */
+.highlight-brush {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+.highlight-brush::after {
+  content: '';
+  position: absolute;
+  left: -5%;
+  bottom: 0.1em;
+  width: 110%;
+  height: 12px;
+  background-image: url('/assets/images/hero/shape.svg');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-200 dark:bg-dark-border rounded-full hover:bg-gray-300 dark:hover:bg-gray-600;
+}
